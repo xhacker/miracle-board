@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "type": "http",
+      "id": "xhacker",
+      "title": "http://xhacker.im",
+      "address": "http://xhacker.im"
+    },
+    {
+      "type": "http",
+      "id": "not_exist",
+      "title": "http://not.exist",
+      "address": "http://not.exist"
+    },
+    {
+      "type": "shell",
+      "id": "vps",
+      "title": "VPS",
+      "command": "ping -c 1 xhacker.im"
+    }
+  ]
+}

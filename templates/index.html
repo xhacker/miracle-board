@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Miracle Board</title>
+
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<a><button style="cursor: pointer;" id="robot-button" data-clicked="0">Try Again</button></a>
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("#robot-button").click(function() {
+		var clicked = $(this).attr("data-clicked");
+		if (clicked == 0) {
+			$(this).html("Please do not press this button again.");
+			$(this).attr("data-clicked", 1);
+		}
+		else {
+			$(this).hide();
+		}
+	});
+});
+</script>
+<script>!window.jQuery && document.write('<script src="/static/js/jquery-1.10.2.min.js"><\/script>')</script>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
+</footer>
+
+</body>
+</html>
