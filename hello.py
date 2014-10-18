@@ -30,7 +30,11 @@ get_handler = {
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    data = {
+        'tasks': config['tasks'],
+        'title': config['title'],
+    }
+    return render_template('index.html', **data)
 
 
 @app.route('/<task_id>')

@@ -1,22 +1,23 @@
 {
+  "title": "Xhacker’s Status Board",
   "tasks": [
     {
       "type": "http",
       "id": "xhacker",
-      "title": "http://xhacker.im",
+      "title": "xhacker.im",
       "address": "http://xhacker.im"
     },
     {
       "type": "http",
       "id": "not_exist",
-      "title": "http://not.exist",
+      "title": "not.exist",
       "address": "http://not.exist"
     },
     {
       "type": "shell",
       "id": "vps",
       "title": "VPS",
-      "command": "ping -c 1 xhacker.im"
+      "command": "ping -c 1 us-east-1.xhacker.im"
     }
   ]
 }

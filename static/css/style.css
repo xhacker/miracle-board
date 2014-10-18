@@ -1,0 +1,63 @@
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+
+::-moz-selection { background: #fe57a1; color: rgba(255, 255, 255, 0.85); text-shadow: none; }
+::selection { background: #fe57a1; color: rgba(255, 255, 255, 0.85); text-shadow: none; }
+
+body {
+    width: 623px;
+    margin: auto;
+    padding: 40px;
+    font: 36px/42px "Source Sans Pro", sans-serif;
+    color: #555;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+}
+a:hover {
+    color: #666;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h1 ~ p {
+    font-size: 20px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 40px 0;
+}
+
+.status {
+    background-color: rgba(100, 100, 100, 0.2);
+    width: 110px;
+    margin-right: 24px;
+    padding: 4px 16px;
+    font-size: 32px;
+    float: left;
+    border-right: 6px solid rgba(120, 120, 120, 0.75);
+    color: rgb(120, 120, 120);
+}
+
+.status .mega-octicon {
+    margin-right: 6px;
+}
+
+.status.up {
+    background-color: rgba(130, 183, 39, 0.2);
+    color: rgb(100, 183, 20);
+    border-color: rgba(100, 183, 20, 0.75);
+}
+.status.down {
+    background-color: rgba(255, 93, 55, 0.2);
+    color: rgb(255, 93, 55);
+    border-color: rgba(255, 93, 55, 0.8);
+}
+
+.title {
+    float: left;
+}
