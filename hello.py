@@ -1,5 +1,6 @@
 import json
 import requests
+import subprocess
 
 from flask import Flask
 from flask import render_template
@@ -9,7 +10,8 @@ config = {}
 
 
 def shell_handler(command, **kwargs):
-    return json.dumps(False)
+    return_code = subprocess.call(command, shell=True)
+    return json.dumps(return_code == 0)
 
 
 def http_handler(address, **kwargs):

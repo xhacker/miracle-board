@@ -25,4 +25,4 @@ Very simple.
 }
 ```
 
-By default, we expect ``http`` tasks to have status code ``200``, ``shell`` tasks to have return code ``0``.
+By default, we expect ``http`` tasks to have status code ``200``, ``shell`` tasks to have return code ``0``. ``command`` field in ``shell`` tasks will be directly executed, please use with caution.
