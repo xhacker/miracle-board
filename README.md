@@ -1,6 +1,8 @@
 # Miracle Board
 
-Just another damn simple status board.
+Just another damn simple status board, helps you to check if your websites are up.
+
+<img src="screenshot.png" width="698">
 
 ## Configuration
 
@@ -12,7 +14,7 @@ Very simple.
     {
       "type": "http",
       "id": "xhacker_im",
-      "title": "http://xhacker.im",
+      "title": "xhacker.im",
       "address": "http://xhacker.im"
     },
     {
@@ -25,4 +27,4 @@ Very simple.
 }
 ```
 
-By default, we expect ``http`` tasks to have status code ``200``, ``shell`` tasks to have return code ``0``. ``command`` field in ``shell`` tasks will be directly executed, please use with caution.
+By default, we expect ``http`` tasks to have status code ``200``, ``shell`` tasks to have return code ``0``. ``command`` field in ``shell`` tasks will be executed directly, please use with caution. ``id`` is for internal use, must be unique.
