@@ -6,7 +6,8 @@ from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
-config = {}
+with open('config.json') as f:
+    config = json.loads(f.read())
 
 
 def shell_handler(command, **kwargs):
@@ -47,6 +48,4 @@ def status(task_id):
 
 
 if __name__ == '__main__':
-    with open('config.json') as f:
-        config = json.loads(f.read())
     app.run(debug=True, host='0.0.0.0')
