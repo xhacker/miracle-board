@@ -9,15 +9,33 @@
     },
     {
       "type": "http",
-      "id": "not_exist",
-      "title": "not.exist",
-      "address": "http://not.exist"
+      "id": "laizhende",
+      "title": "来真的",
+      "address": "http://laizhende.hcc.im"
+    },
+    {
+      "type": "http",
+      "id": "haloword",
+      "title": "Halo Word Server",
+      "address": "http://halo.xhacker.im/webster/query/miracle_dashboard"
     },
     {
       "type": "shell",
-      "id": "vps",
-      "title": "VPS",
-      "command": "ping -c 1 us-east-1.xhacker.im"
+      "id": "teawhen",
+      "title": "TeaWhen VPS",
+      "command": "ping -c 1 vps.teawhen.com"
+    },
+    {
+      "type": "shell",
+      "id": "us-west-1",
+      "title": "@vps’s us-west-1",
+      "command": "ping -c 1 us-west-1.xhacker.im"
+    },
+    {
+      "type": "shell",
+      "id": "us-west-2",
+      "title": "@vps’s us-west-2",
+      "command": "ping -c 1 us-west-2.xhacker.im"
     }
   ]
 }
