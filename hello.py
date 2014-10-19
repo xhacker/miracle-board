@@ -47,6 +47,6 @@ def status(task_id):
 
 
 if __name__ == '__main__':
-    with open('example.json') as f:
+    with open('config.json') as f:
         config = json.loads(f.read())
     app.run(debug=True, host='0.0.0.0')

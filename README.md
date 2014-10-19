@@ -28,3 +28,16 @@ Very simple.
 ```
 
 By default, we expect ``http`` tasks to have status code ``200``, ``shell`` tasks to have return code ``0``. ``command`` field in ``shell`` tasks will be executed directly, please use with caution. ``id`` is for internal use, must be unique.
+
+## Deployment
+
+### Run locally
+
+```bash
+pip install -r requirements.txt
+python hello.py
+```
+
+### Deploy
+
+Please refer to Flask documentation: http://flask.pocoo.org/docs/0.10/deploying/
