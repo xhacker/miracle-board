@@ -61,3 +61,46 @@ h1 ~ p {
 .title {
     float: left;
 }
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-device-width: 480px) {
+
+    html {
+        width: 100%;
+    }
+
+    body {
+        width: auto;
+        padding: 30px;
+        font: 24px/32px "Source Sans Pro", sans-serif;
+        color: #555;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-top: 4px;
+    }
+
+    h1 ~ p {
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        margin: 12px 0 20px 0;
+    }
+
+    .status {
+        width: 76px;
+        margin-right: 14px;
+        padding: 2px 10px;
+        font-size: 22px;
+        border-right: 4px solid rgba(120, 120, 120, 0.75);
+    }
+
+    .status .mega-octicon {
+        font-size: 22px;
+        margin-right: 6px;
+    }
+
+}
