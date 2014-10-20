@@ -42,3 +42,7 @@ python hello.py
 ### Deploy
 
 Please refer to Flask documentation: http://flask.pocoo.org/docs/0.10/deploying/
+
+### License
+
+MIT
