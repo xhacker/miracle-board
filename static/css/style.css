@@ -74,7 +74,7 @@ h1 ~ p {
 
     body {
         width: auto;
-        padding: 30px;
+        padding: 24px;
         font: 24px/32px "Source Sans Pro", sans-serif;
         color: #555;
     }
@@ -91,15 +91,20 @@ h1 ~ p {
     }
 
     .status {
-        width: 76px;
+        width: 72px;
         margin-right: 14px;
-        padding: 2px 10px;
-        font-size: 22px;
+        padding: 1px 8px;
+        font-size: 20px;
         border-right: 4px solid rgba(120, 120, 120, 0.75);
     }
 
-    .status .mega-octicon {
+    .title {
+        margin-top: 20px;
         font-size: 22px;
+    }
+
+    .status .mega-octicon {
+        font-size: 20px;
         margin-right: 6px;
     }
 
