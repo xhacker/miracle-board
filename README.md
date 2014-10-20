@@ -10,6 +10,7 @@ Very simple.
 
 ```json
 {
+  "title": "Xhacker’s Status Board",
   "tasks": [
     {
       "type": "http",
