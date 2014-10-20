@@ -41,8 +41,8 @@ def index():
 @app.route('/<task_id>')
 def status(task_id):
     try:
-        task = filter(lambda t: t['id'] == task_id, config['tasks'])[0]
-    except IndexError:
+        task = next(task for task in config['tasks'] if task['id'] == task_id)
+    except StopIteration:
         return 'This task does not exist', 404
     return get_handler[task['type']](**task)
 
