@@ -43,6 +43,6 @@ python hello.py
 
 Please refer to Flask documentation: http://flask.pocoo.org/docs/0.10/deploying/
 
-### License
+## License
 
 MIT
