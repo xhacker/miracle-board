@@ -20,7 +20,7 @@
 
 {% for task in tasks %}
 <div class="clearfix">
-<p class="status" data-addr="/{{ task.id }}"><span class="icon mega-octicon octicon-hourglass"></span><span class="text">...</span></p>
+<p class="status" data-id="{{ task.id }}"><span class="icon mega-octicon octicon-hourglass"></span><span class="text">...</span></p>
 <p class="title">{{ task.title }}</p>
 </div>
 {% endfor %}
@@ -29,41 +29,47 @@
 <script>!window.jQuery && document.write('<script src="/static/js/jquery-1.10.2.min.js"><\/script>')</script>
 <script type="text/javascript">
 $(function() {
+    var time = {{ auto }}
     function update() {
-      $(".status").each(function() {
-          var addr = $(this).attr("data-addr");
+      $.ajax('/tasks').done(function(data) {
+        data = JSON.parse(data);
+        $(".status").each(function() {
+            var id = $(this).attr("data-id");
+            var elem = $(this);
+            var up = data[id]
+            elem.find(".icon").removeClass("octicon-hourglass");
+            if (up && up == "true") {
+                elem.removeClass("down");
+                elem.addClass("up");
+                elem.find(".icon").removeClass("octicon-x");
+                elem.find(".icon").addClass("octicon-check");
+                elem.find(".text").text("Up");
+            } else {
+                elem.removeClass("up");
+                elem.addClass("down");
+                elem.find(".icon").removeClass("octicon-check");
+                elem.find(".icon").addClass("octicon-x");
+                elem.find(".text").text("Down");
+            }
+        });
+        if (time && time > 0) {
+            setTimeout(update, time);
+        }
+      }).fail(function() {
+        $(".status").each(function() {
           var elem = $(this);
-          $.ajax(addr).done(function(data) {
-              elem.find(".icon").removeClass("octicon-hourglass");
-              if (data == "true") {
-                  elem.removeClass("down");
-                  elem.addClass("up");
-                  elem.find(".icon").removeClass("octicon-x");
-                  elem.find(".icon").addClass("octicon-check");
-                  elem.find(".text").text("Up");
-              }
-              else {
-                  elem.removeClass("up");
-                  elem.addClass("down");
-                  elem.find(".icon").removeClass("octicon-check");
-                  elem.find(".icon").addClass("octicon-x");
-                  elem.find(".text").text("Down");
-              }
-          }).fail(function() {
-              // TODO: should have another state?
-              elem.removeClass("up");
-              elem.addClass("down");
-              elem.find(".icon").removeClass("octicon-check");
-              elem.find(".icon").addClass("octicon-x");
-              elem.find(".text").text("Down");
-          })
+          elem.removeClass("up");
+          elem.addClass("down");
+          elem.find(".icon").removeClass("octicon-check");
+          elem.find(".icon").addClass("octicon-x");
+          elem.find(".text").text("Down");
+        });
+        if (time && time > 0) {
+            setTimeout(update, time);
+        }
       });
     }
     update();
-    time = {{ auto }}
-    if (time && time > 0) {
-        setInterval(update, time);
-    }
 });
 </script>
 </footer>
