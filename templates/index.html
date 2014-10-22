@@ -31,7 +31,7 @@
 $(function() {
     var time = {{ auto }}
     function update() {
-      $.ajax('/tasks').done(function(data) {
+      $.ajax('/tasks', {timeout: 7000}).done(function(data) {
         data = JSON.parse(data);
         $(".status").each(function() {
             var id = $(this).attr("data-id");
