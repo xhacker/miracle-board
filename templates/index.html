@@ -59,10 +59,12 @@ $(function() {
         $(".status").each(function() {
           var elem = $(this);
           elem.removeClass("up");
-          elem.addClass("down");
-          elem.find(".icon").removeClass("octicon-check");
-          elem.find(".icon").addClass("octicon-x");
-          elem.find(".text").text("Down");
+          elem.removeClass("down");
+          icon = elem.find(".icon")
+          icon.removeClass("octicon-check");
+          icon.removeClass("octicon-x");
+          icon.addClass("octicon-hourglass");
+          elem.find(".text").text("...")
         });
         if (time && time > 0) {
             setTimeout(update, time);
