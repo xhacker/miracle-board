@@ -29,28 +29,35 @@
 <script>!window.jQuery && document.write('<script src="/static/js/jquery-1.10.2.min.js"><\/script>')</script>
 <script type="text/javascript">
 $(function() {
-    $(".status").each(function() {
-        var addr = $(this).attr("data-addr");
-        var elem = $(this);
-        $.ajax(addr).done(function(data) {
-            elem.find(".icon").removeClass("octicon-hourglass");
-            if (data == "true") {
-                elem.addClass("up");
-                elem.find(".icon").addClass("octicon-check");
-                elem.find(".text").text("Up");
-            }
-            else {
-                elem.addClass("down");
-                elem.find(".icon").addClass("octicon-x");
-                elem.find(".text").text("Down");
-            }
-        }).fail(function() {
-            // TODO: should have another state?
-            elem.addClass("down");
-            elem.find(".icon").addClass("octicon-x");
-            elem.find(".text").text("Down");
-        })
-    });
+    function update() {
+      $(".status").each(function() {
+          var addr = $(this).attr("data-addr");
+          var elem = $(this);
+          $.ajax(addr).done(function(data) {
+              elem.find(".icon").removeClass("octicon-hourglass");
+              if (data == "true") {
+                  elem.removeClass("down");
+                  elem.addClass("up");
+                  elem.find(".icon").addClass("octicon-check");
+                  elem.find(".text").text("Up");
+              }
+              else {
+                  elem.removeClass("up");
+                  elem.addClass("down");
+                  elem.find(".icon").addClass("octicon-x");
+                  elem.find(".text").text("Down");
+              }
+          }).fail(function() {
+              // TODO: should have another state?
+              elem.removeClass("up");
+              elem.addClass("down");
+              elem.find(".icon").addClass("octicon-x");
+              elem.find(".text").text("Down");
+          })
+      });
+    }
+    update();
+    setInterval(update, 5000);
 });
 </script>
 </footer>
