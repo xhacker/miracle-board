@@ -57,7 +57,10 @@ $(function() {
       });
     }
     update();
-    setInterval(update, 5000);
+    time = {{ auto }}
+    if (time && time > 0) {
+        setInterval(update, time);
+    }
 });
 </script>
 </footer>
