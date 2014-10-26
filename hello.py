@@ -34,7 +34,7 @@ def index():
     data = {
         'tasks': config['tasks'],
         'title': config['title'],
-        'auto': config['auto_update']
+        'auto': config['auto_update_interval']
     }
     return render_template('index.html', **data)
 

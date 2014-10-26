@@ -11,7 +11,7 @@ Very simple.
 ```json
 {
   "title": "Xhacker’s Status Board",
-  "auto_update": 5000,
+  "auto_update_interval": 5000,
   "tasks": [
     {
       "type": "http",
@@ -28,6 +28,8 @@ Very simple.
   ]
 }
 ```
+
+To disable auto updating, set the interval in the configuration to -1.
 
 By default, we expect ``http`` tasks to have status code ``200``, ``shell`` tasks to have return code ``0``. ``command`` field in ``shell`` tasks will be executed directly, please use with caution. ``id`` is for internal use, must be unique.
 
