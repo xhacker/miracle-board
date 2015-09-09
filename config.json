@@ -1,5 +1,6 @@
 {
   "title": "Xhacker’s Status Board",
+  "auto_update_interval": 5000,
   "tasks": [
     {
       "type": "http",

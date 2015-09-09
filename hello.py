@@ -34,9 +34,16 @@ def index():
     data = {
         'tasks': config['tasks'],
         'title': config['title'],
+        'auto': config.get('auto_update_interval', -1)
     }
     return render_template('index.html', **data)
 
+@app.route('/tasks')
+def tasks():
+    response = {}
+    for task in config['tasks']:
+        response[task['id']] = status(task['id'])
+    return json.dumps(response)
 
 @app.route('/<task_id>')
 def status(task_id):
