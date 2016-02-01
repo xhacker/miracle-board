@@ -1,16 +1,16 @@
-FROM ubuntu:trusty
+FROM alpine:3.3
+MAINTAINER miracle-board@ela.build
 
-RUN apt-get update && \
-        DEBIAN_FRONTEND=noninteractive apt-get -yq install python-pip;
-RUN mkdir /app;
+RUN apk --update --no-cache add python py-pip && pip install --upgrade pip
+RUN apk --update add --virtual build-dependencies python-dev build-base openssl-dev libffi-dev
 
-ADD hello.py /app/hello.py
-ADD static /app/static
-ADD templates /app/templates
-ADD config.json /app/config.json
-ADD requirements.txt /app/requirements.txt
-RUN pip install -r /app/requirements.txt
-
-EXPOSE 5000
+COPY . /app
 WORKDIR /app
-CMD ["python", "hello.py"]
+
+RUN pip install -r /app/requirements.txt
+RUN pip install gunicorn
+
+RUN apk del build-dependencies
+
+EXPOSE 8000
+CMD ["gunicorn", "-b 0.0.0.0", "-w 2", "hello:app"]
