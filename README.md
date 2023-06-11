@@ -41,7 +41,7 @@ python hello.py
 
 ### Deploy
 
-Please refer to Flask documentation: https://flask.palletsprojects.com/en/1.1.x/deploying/
+Please refer to Flask documentation: https://flask.palletsprojects.com/en/2.3.x/deploying/
 
 ## License
 
